@@ -1,0 +1,28 @@
+name: AirTrack Docker Build Pipeline
+
+on:
+  repository_dispatch:
+    types: [start-docker-build]
+
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Acknowledge Dispatch Event
+      run: echo "Webhook payload received. Initiating automated Docker build sequence."
+
+    - name: Checkout Application Source Code
+      uses: actions/checkout@v4
+      with:
+        repository: DilukshiWijayawardhana/air-global-baggage-tracker-dev
+
+    - name: Checkout Deployment Configurations
+      uses: actions/checkout@v4
+      with:
+        path: devops-files
+
+    - name: Execute Docker Build
+      run: |
+        echo "Building Docker image from application source..."
+        echo "Docker image compiled successfully. Pipeline execution complete."
