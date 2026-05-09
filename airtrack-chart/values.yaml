@@ -1,0 +1,17 @@
+
+# Application Settings
+
+# copies of the system should run
+replicaCount: 3
+
+# Alpine Docker Box
+image:
+  repository: dilukshiwijayawardhana/airtrack-api
+  tag: "latest"
+
+
+# Networking Settings
+
+service:
+  type: ClusterIP
+  port: 8080

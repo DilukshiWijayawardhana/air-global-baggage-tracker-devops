@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+spec:
+  # check the values.yaml file to see how many boxes to build
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: airtrack
+  template:
+    metadata:
+      labels:
+        app: airtrack
+    spec:
+      containers:
+        - name: airtrack-container
+          # check the values.yaml file to find the correct Docker image
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 8080
