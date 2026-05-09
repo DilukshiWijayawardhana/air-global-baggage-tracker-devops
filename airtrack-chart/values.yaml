@@ -7,7 +7,7 @@ replicaCount: 3
 # Alpine Docker Box
 image:
   repository: dilukshi1017/airtrack-api
-  tag: "latest"
+  tag: "v1"
 
 
 # Networking Settings
