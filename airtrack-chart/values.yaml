@@ -6,7 +6,7 @@ replicaCount: 3
 
 # Alpine Docker Box
 image:
-  repository: dilukshiwijayawardhana/airtrack-api
+  repository: dilukshi1017/airtrack-api
   tag: "latest"
 
 
