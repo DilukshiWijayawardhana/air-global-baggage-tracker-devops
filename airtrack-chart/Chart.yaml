@@ -1,0 +1,4 @@
+apiVersion: v2
+name: airtrack-baggage-tracker
+description: Enterprise Helm chart for the AirTrack Global Baggage System
+version: 1.0.0
