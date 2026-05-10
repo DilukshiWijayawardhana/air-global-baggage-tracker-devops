@@ -15,6 +15,6 @@ spec:
       containers:
         - name: airtrack-container
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: Always  # <--- ADD THIS LINE
+          imagePullPolicy: Always  # <--- Kubernetes to always check Docker Hub for a fresh image.
           ports:
             - containerPort: 8080
