@@ -40,7 +40,9 @@ When a developer (me) makes a change to the website code, the following happens 
 If you want to test this system on your own computer, follow these simple steps:
 
 **Step 1: Start a Kubernetes Cluster**
+<br><br>
 Create a local cluster using k3d:
+<br>
 `k3d cluster create my-cluster`
 <br><br>
 <img width="1167" height="291" alt="image" src="https://github.com/user-attachments/assets/497610f8-d587-4364-8273-0b57dc95ba4f" />
@@ -51,25 +53,31 @@ Create a local cluster using k3d:
 <br><br>
 
 **Step 2: Install ArgoCD**
-Create a room for ArgoCD and install it:
-`kubectl create namespace argocd`
-`kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml`
-<br>
-<img width="1457" height="195" alt="image" src="https://github.com/user-attachments/assets/0a605db5-ccd1-4b5e-9ade-f7cdc76b436e" />
 <br><br>
+Create a room for ArgoCD and install it:
+<br>
+`kubectl create namespace argocd`
+<br>
+`kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml`
+<br><br><br>
+<img width="1457" height="195" alt="image" src="https://github.com/user-attachments/assets/0a605db5-ccd1-4b5e-9ade-f7cdc76b436e" />
+<br><br><br>
 **Step 3: Deploy the Application**
+<br><br>
 Connect ArgoCD to the Infrastructure repository. ArgoCD will read the Helm charts and automatically build the 3 application pods.
 <img width="1430" height="266" alt="image" src="https://github.com/user-attachments/assets/1d4f3e3c-670d-43be-8465-c474eb1ac87b" />
-<br><br>
+<br><br><br>
 <img width="1430" height="302" alt="image" src="https://github.com/user-attachments/assets/385f46d2-bb3d-4bf4-8158-7b668eee40d3" />
-<br><br>
+<br><br><br>
 <img width="1537" height="245" alt="image" src="https://github.com/user-attachments/assets/30cf890a-8e4a-4433-ac4f-d95aa02843f3" />
-<br><br>
+<br><br><br>
 <img width="1692" height="805" alt="image" src="https://github.com/user-attachments/assets/cc489862-9180-403d-b4c1-3e5c0d80f727" />
-<br><br>
+<br><br><br>
 
 **Step 4: Open the Website**
+<br><br>
 Build a bridge to the application to view it in your web browser:
+<br>
 `kubectl port-forward svc/baggage-tracker-app-service 8081:8080`
 <br>
 <img width="1423" height="220" alt="image" src="https://github.com/user-attachments/assets/57c5d56b-cc51-40ba-9e1c-58a3b62dd034" />
