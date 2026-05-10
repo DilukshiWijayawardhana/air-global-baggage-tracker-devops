@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: {{ .Release.Name }}-deployment
 spec:
-  # check the values.yaml file to see how many boxes to build
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
@@ -15,7 +14,7 @@ spec:
     spec:
       containers:
         - name: airtrack-container
-          # check the values.yaml file to find the correct Docker image
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: Always  # <--- ADD THIS LINE
           ports:
             - containerPort: 8080
